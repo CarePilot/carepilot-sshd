@@ -4,7 +4,7 @@ class sshd::config {
     owner => 'root',
     group => 'root',
     mode => 0600,
-    source => "puppet:///modules/sshd/sshdd_config",
+    source => "puppet:///modules/sshd/sshd_config",
     require => Class["sshd::install"],
     notify => Class["sshd::service"],
   }
