@@ -1,9 +1,9 @@
-class ssh::service {
-  service { $ssh::params::ssh_service_name:
+class sshd::service {
+  service { $sshd::params::sshd_service_name:
     ensure => running,
     hasstatus => true,
     hasrestart => true,
     enable => true,
-    require => Class["ssh::config"],
+    require => Class["sshd::config"],
   }
 }

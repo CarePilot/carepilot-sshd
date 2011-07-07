@@ -1,5 +1,5 @@
-class ssh::install {
-  package { $ssh::params::ssh_package_name:
+class sshd::install {
+  package { $sshd::params::sshd_package_name:
     ensure => present,
   }
 }

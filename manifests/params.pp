@@ -1,19 +1,19 @@
-class ssh::params {
+class sshd::params {
   case $operatingsystem {
     Solaris: {
-      $ssh_package_name = 'openssh'
-      $ssh_service_config = '/etc/ssh/sshd_config'
-      $ssh_service_name = 'sshd'
+      $sshd_package_name = 'openssh'
+      $sshd_service_config = '/etc/ssh/sshd_config'
+      $sshd_service_name = 'sshd'
     }
     /(Ubuntu|Debian)/: {
-      $ssh_package_name = 'openssh-server'
-      $ssh_service_config = '/etc/ssh/sshd_config'
-      $ssh_service_name = 'ssh'
+      $sshd_package_name = 'openssh-server'
+      $sshd_service_config = '/etc/ssh/sshd_config'
+      $sshd_service_name = 'ssh'
     }
     /(RedHat|CentOS|Fedora)/: {
-      $ssh_package_name = 'openssh-server'
-      $ssh_service_config = fail
-      $ssh_service_name = fail
+      $sshd_package_name = 'openssh-server'
+      $sshd_service_config = fail
+      $sshd_service_name = fail
     }
   }
 }
