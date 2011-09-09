@@ -7,9 +7,9 @@ HostKey /etc/ssh/ssh_host_dsa_key
 #Privilege Separation is turned on for security
 UsePrivilegeSeparation yes
 
-#Idle-kill users after five minutes.
-ClientAliveInterval 300
-ClientAliveCountMax 0
+#Idle-kill users after at most six minutes.
+ClientAliveInterval 2m
+ClientAliveCountMax 3
 
 # Lifetime and size of ephemeral version 1 server key
 KeyRegenerationInterval 3600
@@ -21,7 +21,7 @@ LogLevel INFO
 
 # Authentication:
 LoginGraceTime 120
-PermitRootLogin yes
+PermitRootLogin without-password
 StrictModes yes
 
 RSAAuthentication yes
@@ -41,10 +41,7 @@ PermitEmptyPasswords no
 # some PAM modules and threads)
 ChallengeResponseAuthentication no
 
-X11Forwarding no
 PrintMotd no
-PrintLastLog yes
-TCPKeepAlive yes
 
 AcceptEnv LANG LC_*
 
